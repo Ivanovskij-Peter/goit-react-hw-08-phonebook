@@ -2,7 +2,10 @@ import React from 'react';
 import './ContactsItems.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
-import deleteContact from '../contacts-operations';
+import deleteContact from '../redux/contact/contacts-operations';
+import DeleteIcon from '@material-ui/icons/Delete';
+
+import IconButton from '@material-ui/core/IconButton';
 
 const filtredArr = (contactsItems, filter) => {
   return filter
@@ -13,15 +16,18 @@ const filtredArr = (contactsItems, filter) => {
 };
 function ContactsItems({ contactsItems, deleteContact, filter }) {
   return (
-    <TransitionGroup component="ul" className="list">
+    <TransitionGroup className="list">
       {filtredArr(contactsItems, filter).map(el => (
         <CSSTransition key={el.id} timeout={300} classNames="list-fade">
           <li key={el.id} className="item">
             <p>{el.name}</p>
             <p>{el.number}</p>
-            <button className="btn" onClick={() => deleteContact(el.id)}>
-              X
-            </button>
+            <IconButton
+              aria-label="delete"
+              onClick={() => deleteContact(el.id)}
+            >
+              <DeleteIcon />
+            </IconButton>
           </li>
         </CSSTransition>
       ))}
@@ -29,8 +35,8 @@ function ContactsItems({ contactsItems, deleteContact, filter }) {
   );
 }
 const mapStateToProps = state => ({
-  contactsItems: state.contacts,
-  filter: state.filter,
+  contactsItems: state.contacts.contacts,
+  filter: state.contacts.filter,
 });
 const mapDispatchToProps = dispatch => ({
   deleteContact: id => dispatch(deleteContact.deleteContact(id)),

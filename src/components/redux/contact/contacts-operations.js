@@ -9,16 +9,14 @@ import {
   fetchContactsRequest,
   fetchContactSuccess,
   fetchContactError,
-} from '../components/redux/actions';
-
-axios.defaults.baseURL = 'http://localhost:4040';
+} from './actions';
 
 const fetchContacts = () => dispatch => {
   dispatch(fetchContactsRequest());
   axios
     .get('/contacts')
     .then(({ data }) => dispatch(fetchContactSuccess(data)))
-    .catch(error => dispatch(fetchContactError(error)));
+    .catch(error => dispatch(fetchContactError(error.message)));
 };
 
 const addContact = ({ name, number, id }) => dispatch => {
@@ -28,7 +26,7 @@ const addContact = ({ name, number, id }) => dispatch => {
   axios
     .post('/contacts', contact)
     .then(({ data }) => dispatch(addContactSuccess(data)))
-    .catch(error => dispatch(addContactError(error)));
+    .catch(error => dispatch(addContactError(error.message)));
 };
 
 const deleteContact = contactId => dispatch => {
@@ -36,7 +34,7 @@ const deleteContact = contactId => dispatch => {
   axios
     .delete(`/contacts/${contactId}`)
     .then(() => dispatch(deleteContactSuccess(contactId)))
-    .catch(error => dispatch(deleteContactError(error)));
+    .catch(error => dispatch(deleteContactError(error.message)));
 };
 
 export default {

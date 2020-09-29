@@ -1,9 +1,11 @@
 {
-  "name": "goit-react-hw-07-phonebook",
+  "name": "goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Ivanovskij-Peter.github.io/goit-react-hw-07-phonebook",
+  "homepage": "https://Ivanovskij-Peter.github.io/goit-react-hw-08npm -phonebook",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -15,6 +17,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
@@ -29,8 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "server": "json-server --port 4040 --delay 500 --w db.json"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

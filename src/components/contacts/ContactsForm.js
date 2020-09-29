@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import addContact from '../contacts-operations';
+import addContact from '../redux/contact/contacts-operations';
 import { connect } from 'react-redux';
 
 class ContactsForm extends Component {
@@ -62,11 +62,12 @@ class ContactsForm extends Component {
           value={this.state.number}
           onChange={this.handleChange}
         ></input>
+
         <button
           style={{
             marginTop: '15px',
             width: '100%',
-            backgroundColor: 'blue',
+            backgroundColor: 'royalblue',
             color: 'white',
             height: '35px',
           }}

@@ -5,7 +5,7 @@ import ContactsItems from '../contacts/ContactsItems';
 import './PhoneBook.css';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
-import operations from '../contacts-operations';
+import operations from '../redux/contact/contacts-operations';
 
 class PhoneBook extends Component {
   state = {
