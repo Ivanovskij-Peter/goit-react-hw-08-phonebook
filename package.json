@@ -2,7 +2,7 @@
   "name": "goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Ivanovskij-Peter.github.io/goit-react-hw-08npm -phonebook",
+  "homepage": "https://Ivanovskij-Peter.github.io/goit-react-phonebook",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
